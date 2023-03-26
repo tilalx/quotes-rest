@@ -12,10 +12,6 @@
   GET /random
 ```
 
-| Parameter | Type     |
-| :-------- | :------- |
-| `api_key` | `string` |
-
 
 ## Authors
 
