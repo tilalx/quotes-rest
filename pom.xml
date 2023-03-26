@@ -6,7 +6,7 @@
 
   <groupId>rest.quotes</groupId>
   <artifactId>quotes</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
 
   <name>quotes</name>
   <!-- FIXME change it to the project's website -->
@@ -27,9 +27,27 @@
     </dependency>
 
     <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20230227</version>
+    </dependency>
+
+    <dependency>
       <groupId>io.javalin</groupId>
       <artifactId>javalin</artifactId>
       <version>5.4.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.github.cdimascio</groupId>
+      <artifactId>java-dotenv</artifactId>
+      <version>5.2.2</version>
     </dependency>
 
     <dependency>
