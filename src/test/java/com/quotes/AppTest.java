@@ -1,4 +1,4 @@
-package rest.quotes;
+package com.quotes;
 
 import static org.junit.Assert.assertTrue;
 
