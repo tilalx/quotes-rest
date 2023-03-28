@@ -1,8 +1,7 @@
 package com.quotes;
 
 import io.javalin.*;
-//import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,8 +19,11 @@ import java.sql.Timestamp;
 import io.github.cdimascio.dotenv.Dotenv;
 
 
+
+
 public class App{
 
+    
     
     public static Dotenv dotenv = Dotenv.configure()
             .load();
@@ -49,6 +51,7 @@ public class App{
 
 
     public static void main(String[] args) throws JsonProcessingException, Exception {
+        DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
         firstrun();
         ExecutorService executor = Executors.newFixedThreadPool(1);
         Runnable testRunnableTask = () -> {
@@ -162,6 +165,7 @@ public class App{
     }
 
     public static void pushandget() throws Exception {
+        
         while (true) {
             try {
                 URL url = new URL("https://api.quotable.io/random");
@@ -190,7 +194,7 @@ public class App{
                 writequotestodb(quoteid, quotecontent, quoteauthor, quotetags, quoteauthorSlug, quotelength, quoteadddate);
             } catch (IOException httpe) {
                 if (httpe.getMessage().contains("429")) {
-                    Thread.sleep(10000);
+                    Thread.sleep(60000);
                 } else {
                     System.out.println("Unexpectet error in push and get");
                     System.out.println(httpe);
