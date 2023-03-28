@@ -31,8 +31,8 @@ public class App{
     public static String connectionUrl = "jdbc:sqlserver://"+dotenv.get("MSSQLIP")+":"+dotenv.get("MSSQLPORT")+";"
             
             + "database="+dotenv.get("DATABASE")+";"
-            + "user="+dotenv.get("USER")+";"
-            + "password="+dotenv.get("PASSWORD")+";"
+            + "user="+dotenv.get("DBUSER")+";"
+            + "password="+dotenv.get("DBPASSWORD")+";"
             + "encrypt="+dotenv.get("ENCRYPT")+";"
             + "trustServerCertificate="+dotenv.get("TRUSTSERVERCERTOFOCATE")+";"
             + "loginTimeout="+dotenv.get("LOGINTIMEOUT")+";";
