@@ -1,10 +1,14 @@
-version: '3.4'
+ersion: '3.4'
 
 services:
   quotesrest:
     image: quotesrest
+    env_file:
+      - .env
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./dockerfile
     ports:
-      - 80:80
+      - 8071:80
+    volumes:
+      - ./env:/env
