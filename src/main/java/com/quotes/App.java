@@ -26,7 +26,7 @@ public class App{
     
     
     public static Dotenv dotenv = Dotenv.configure()
-            .directory("env")
+            .directory("/env")
             .load();
     
     public static String connectionUrl = "jdbc:sqlserver://"+dotenv.get("MSSQLIP")+":"+dotenv.get("MSSQLPORT")+";"
