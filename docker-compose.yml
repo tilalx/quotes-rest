@@ -1,14 +1,18 @@
-version: '3.4'
+version: '3.0'
 
 services:
-  quotesrest:
-    image: quotesrest
-    env_file:
-      - .env
-    build:
-      context: .
-      dockerfile: ./dockerfile
+  app:
+    image: quotes:2.0
+    container_name: quotes-rest
     ports:
-      - 8071:80
-    volumes:
-      - ./env:/env
+      - "7080:80"
+    environment:
+        #postgresql
+      - PGHOST=192.168.178.212
+      - PGPORT=5432
+      - PGDATABASE=quotes
+      - PGDBUSER=postgres
+      - PGDBPASSWORD=password
+      - PGSSL=false
+      - PGSSLMODE=prefer
+      - PGCONNECTTIMEOUT=30

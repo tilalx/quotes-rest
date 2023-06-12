@@ -6,7 +6,7 @@
 
   <groupId>com.quotes</groupId>
   <artifactId>quotes</artifactId>
-  <version>1.0</version>
+  <version>2.0</version>
   <packaging>jar</packaging>
   <name>quotes</name>
   <!-- FIXME change it to the project's website -->
@@ -19,17 +19,30 @@
   </properties>
 
   <dependencies>
+
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20230227</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+      <version>4.22.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.6.0</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>com.googlecode.json-simple</groupId>
-        <artifactId>json-simple</artifactId>
-        <version>1.1</version>
     </dependency>
 
     <dependency>
@@ -41,7 +54,7 @@
     <dependency>
       <groupId>io.javalin</groupId>
       <artifactId>javalin</artifactId>
-      <version>5.4.2</version>
+      <version>5.5.0</version>
     </dependency>
 
     <dependency>
@@ -56,41 +69,6 @@
       <version>2.0.6</version>
     </dependency>
 
-    <dependency>
-      <groupId>com.microsoft.sqlserver</groupId>
-      <artifactId>mssql-jdbc</artifactId>
-      <version>12.2.0.jre11</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.10.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>io.github.cdimascio</groupId>
-      <artifactId>dotenv-java</artifactId>
-      <version>2.3.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>2.14.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.14.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.directory.studio</groupId>
-      <artifactId>org.apache.commons.io</artifactId>
-      <version>2.4</version>
-    </dependency>
 
     <dependency>
       <groupId>org.apache.maven.plugins</groupId>
