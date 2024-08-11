@@ -17,7 +17,6 @@ public class WebService {
                 config.http.maxRequestSize = 1000; // the max size of request body that can be accessed without using
                 config.http.defaultContentType = "application/json"; // the default content type
                 config.http.asyncTimeout = 10_000L;
-                config.routing.ignoreTrailingSlashes = true;
 
             });
 
@@ -31,17 +30,15 @@ public class WebService {
             System.out.println("");
         });
 
-        app.routes(() -> {
-            app.get("/random", ctx -> {
-                String countParam = ctx.queryParam("count");
-                int count = countParam != null ? Integer.parseInt(countParam) : 5; // Get the value of 'count'
-                JSONArray jsonArray = DatabaseService.randomQuote(count); // Get a JSON array of report IDs for the user
-                ctx.json(jsonArray.toString()).contentType("application/json"); // Send the JSON array to the client
-            });
+        app.get("/random", ctx -> {
+            String countParam = ctx.queryParam("count");
+            int count = countParam != null ? Integer.parseInt(countParam) : 5; // Get the value of 'count'
+            JSONArray jsonArray = DatabaseService.randomQuote(count); // Get a JSON array of report IDs for the user
+            ctx.json(jsonArray.toString()).contentType("application/json"); // Send the JSON array to the client
+        });
 
-            app.get("/", ctx -> {
-                ctx.redirect("/index.html");
-            });
+        app.get("/", ctx -> {
+            ctx.redirect("/index.html");
         });
 
         app.error(404, ctx ->
