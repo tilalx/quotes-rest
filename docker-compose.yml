@@ -1,8 +1,6 @@
-version: '3.0'
-
 services:
   app:
-    image: quotes:2.0
+    image: tilalx/quotes-rest:latest
     container_name: quotes-rest
     ports:
       - "7080:80"
