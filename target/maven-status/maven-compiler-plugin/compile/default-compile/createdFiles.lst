@@ -1,5 +1,0 @@
-com\quotes\App.class
-com\quotes\service\DatabaseService.class
-com\quotes\service\Variables.class
-com\quotes\service\LiquibaseService.class
-com\quotes\service\WebService.class
