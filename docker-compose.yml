@@ -6,11 +6,22 @@ services:
       - "7080:80"
     environment:
         #postgresql
-      - PGHOST=192.168.178.212
+      - PGHOST=quotes-db
       - PGPORT=5432
       - PGDATABASE=quotes
       - PGDBUSER=postgres
-      - PGDBPASSWORD=password
-      - PGSSL=false
+      - PGDBPASSWORD=secretpassword
+      - PGSSL=true
       - PGSSLMODE=prefer
       - PGCONNECTTIMEOUT=30
+    restart: always
+
+  quotes-db:
+    image: postgres:17
+    container_name: quotes-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secretpassword
+      POSTGRES_DB: quotes
