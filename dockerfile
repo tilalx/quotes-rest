@@ -7,7 +7,7 @@ COPY src ./src
 
 RUN mvn clean install
 
-FROM openjdk:21-jdk
+FROM  eclipse-temurin:21-jre
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
 
@@ -17,4 +17,4 @@ WORKDIR /app
 
 EXPOSE 80
 
-ENTRYPOINT exec java $JAVA_OPTS -jar quotesrest.jar
+ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar quotesrest.jar"]
