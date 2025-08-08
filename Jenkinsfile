@@ -63,7 +63,7 @@ pipeline {
                     }
 
                     sh """
-                        docker buildx build --platform linux/amd64,linux/arm64 --provenance=true --sbom=true --build-arg DOCKER_BUILDKIT=${DOCKER_BUILDKIT} --memory 32g --memory-swap 16g ${tags} --push .
+                        docker buildx build --platform linux/amd64 --provenance=true --sbom=true --build-arg DOCKER_BUILDKIT=${DOCKER_BUILDKIT} --memory 32g --memory-swap 16g ${tags} --push .
                     """
                 }
             }
