@@ -7,7 +7,7 @@ COPY src ./src
 
 RUN mvn clean install
 
-FROM  eclipse-temurin:21-jre
+FROM  eclipse-temurin:25-jre
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
 
