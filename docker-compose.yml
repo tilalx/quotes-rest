@@ -17,7 +17,7 @@ services:
     restart: always
 
   quotes-db:
-    image: postgres:17
+    image: docker.io/library/postgres:18.7@sha256:2ea8630df176ad090ec92136dee850397c5af8781e4bcf2e4162593691c61bbc
     container_name: quotes-db
     ports:
       - "5432:5432"
