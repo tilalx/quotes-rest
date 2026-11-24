@@ -8,7 +8,7 @@ RUN mvn -B -q dependency:go-offline
 COPY src ./src
 RUN mvn -B package
 
-FROM gcr.io/distroless/java25-debian13:nonroot@sha256:1c4ced761d17961c900cba60c33c8c3c46edbdadaa9d5ef9806eb5a6824fd406
+FROM gcr.io/distroless/java25-debian13:nonroot@sha256:4618e7a1a1f5177222985347e1ffd503076f6be5837b89c8fd02800bd8551bde
 
 # No shell in distroless: extra JVM flags go in JAVA_TOOL_OPTIONS, which the JVM reads itself.
 ARG JAVA_OPTS=""
